@@ -117,12 +117,38 @@ public class ViewPantryActivity extends AppCompatActivity
     @Override
     public void onEditClick(PantryItem pantryItem) {
 
-        Toast.makeText(
-                this,
-                "Edit: " + pantryItem.getName(),
-                Toast.LENGTH_SHORT
-        ).show();
+        Intent intent =
+                new Intent(
+                        ViewPantryActivity.this,
+                        EditPantryItemActivity.class
+                );
 
+        intent.putExtra(
+                "PANTRY_ID",
+                pantryItem.getId()
+        );
+
+        intent.putExtra(
+                "PANTRY_NAME",
+                pantryItem.getName()
+        );
+
+        intent.putExtra(
+                "PANTRY_QUANTITY",
+                pantryItem.getQuantity()
+        );
+
+        intent.putExtra(
+                "PANTRY_UNIT",
+                pantryItem.getUnit()
+        );
+
+        intent.putExtra(
+                "PANTRY_EXPIRY",
+                pantryItem.getExpiryDate()
+        );
+
+        startActivity(intent);
     }
 
 

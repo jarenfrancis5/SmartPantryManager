@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.card.MaterialCardView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,13 +41,35 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        // TEMPORARY: Open ViewPantryActivity for testing
-        Intent intent =
-                new Intent(
-                        MainActivity.this,
-                        ViewPantryActivity.class
-                );
+        // Connect dashboard cards to Java
+        MaterialCardView viewPantryCard =
+                findViewById(R.id.view_pantry_card);
 
-        startActivity(intent);
+        MaterialCardView recipesCard =
+                findViewById(R.id.recipes_card);
+
+
+        // Open ViewPantryActivity
+        viewPantryCard.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    ViewPantryActivity.class
+            );
+
+            startActivity(intent);
+        });
+
+
+        // Open ViewRecipesActivity
+        recipesCard.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    ViewRecipesActivity.class
+            );
+
+            startActivity(intent);
+        });
     }
 }

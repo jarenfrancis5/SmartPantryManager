@@ -3,10 +3,9 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main">
-
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,6 +17,7 @@
             android:layout_height="240dp"
             android:src="@drawable/dashboard_background"
             android:scaleType="centerCrop"
+            android:contentDescription="Dashboard background"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="224dp" />
+
 
         <!-- INFORMATION COMPONENT -->
         <com.google.android.material.card.MaterialCardView
@@ -56,56 +57,52 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <!-- MY PANTRY -->
+
+                <!-- VIEW PANTRY -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/view_pantry_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="12dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="20dp"
                         android:gravity="center"
+                        android:padding="20dp"
                         android:text="View Pantry"
                         android:textSize="18sp" />
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    app:cardCornerRadius="12dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="20dp"
-                        android:gravity="center"
-                        android:text="Manage Pantry"
-                        android:textSize="18sp" />
-
-                </com.google.android.material.card.MaterialCardView>
 
                 <!-- RECIPES -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/recipes_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="12dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="20dp"
                         android:gravity="center"
+                        android:padding="20dp"
                         android:text="Recipes"
                         android:textSize="18sp" />
 
                 </com.google.android.material.card.MaterialCardView>
 
+
+                <!-- SUGGESTED RECIPES -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,12 +112,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="20dp"
                         android:gravity="center"
+                        android:padding="20dp"
                         android:text="Suggested Recipes"
                         android:textSize="18sp" />
 
                 </com.google.android.material.card.MaterialCardView>
+
 
                 <!-- SETTINGS -->
                 <com.google.android.material.card.MaterialCardView
@@ -132,8 +130,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="20dp"
                         android:gravity="center"
+                        android:padding="20dp"
                         android:text="Settings"
                         android:textSize="18sp" />
 

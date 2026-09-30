@@ -18,6 +18,15 @@
             android:name=".AddPantryItemActivity"
             android:exported="false" />
         <activity
+            android:name=".EditPantryItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewRecipesActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
